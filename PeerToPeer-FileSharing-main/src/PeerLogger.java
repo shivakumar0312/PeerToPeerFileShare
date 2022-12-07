@@ -14,7 +14,7 @@ public class PeerLogger {
     private String peerId;
     private FileHandler peerLogFileHandler;
     private SimpleDateFormat dateFormat = null;
-    private Logger peerLogger;
+    public Logger peerLogger;
 
     public PeerLogger(String peerId) {
         this.peerId = peerId;

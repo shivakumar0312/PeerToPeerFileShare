@@ -6,8 +6,8 @@ import src.PeerAdmin;
 import src.PeerLogger;
 
 public class PeerProcess {
-	public static void main(String[] args) {
-		String peerID = args[0];
+	public static void main(String[] args) throws InterruptedException {
+		String peerID = "1001";
 		PeerAdmin admin = new PeerAdmin(peerID);
 	}
 }

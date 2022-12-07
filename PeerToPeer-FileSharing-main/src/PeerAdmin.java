@@ -46,7 +46,7 @@ public class PeerAdmin {
 	private Thread serverThread;
 	private volatile Boolean iamDone;
 
-	public PeerAdmin(String peerID) {
+	public PeerAdmin(String peerID) throws InterruptedException {
 		this.peerID = peerID;
 		this.peerInfoMap = new HashMap<>();
 		this.piecesAvailability = new HashMap<>();
@@ -77,6 +77,12 @@ public class PeerAdmin {
 			this.myConfig = this.peerInfoConfig.getPeerConfig(this.peerID);
 			this.peerInfoMap = this.peerInfoConfig.getPeerInfoMap();
 			this.peerList = this.peerInfoConfig.getPeerList();
+			System.out.println("------testing--------------------");
+			System.out.println(this.pieceCount);
+			System.out.println(this.myConfig);
+			System.out.println(this.peerInfoMap);
+			System.out.println(this.peerList);
+			System.out.println("------testing--------------------");
 			String filepath = "peer_" + this.peerID;
 			File file = new File(filepath);
 			file.mkdir();
@@ -106,7 +112,7 @@ public class PeerAdmin {
 			this.serverThread.start();
 		} 
 		catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 
