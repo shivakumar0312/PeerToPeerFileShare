@@ -39,9 +39,9 @@ public class OptimisticUnchokeHandler implements Runnable {
         //System.out.println(" this.interval   ---->"+ this.interval +"    "+this.peerAdmin.getPeerID()+ "   "+ this.peerAdmin.getFileName()+ "  ")
         System.out.println("Copying the data from host to main server");
         //TimeUnit.SECONDS.sleep(30);
-        System.out.println("Data Copied Successfully");
+        //System.out.println("Data Copied Successfully");
         //TimeUnit.SECONDS.sleep(5);
-        System.out.println("Connection Closed");
+        //System.out.println("Connection Closed");
         PeerInfoConfig pic = new PeerInfoConfig();
         pic.loadConfigFile();
         HashMap<String, RemotePeerInfo> peerList= pic.getPeerInfoMap();
@@ -67,7 +67,7 @@ public class OptimisticUnchokeHandler implements Runnable {
         }
         if(temp==0){
             ps.peerLogger.log(Level.INFO,"Data Copied Successfully from "+s);
-            System.out.println("Data Copied Successfully from");
+            System.out.println("Data Copied Successfully from  "+s);
         }
         ps.peerLogger.log(Level.INFO,"Connection Closed");
 
