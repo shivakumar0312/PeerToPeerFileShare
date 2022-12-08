@@ -49,11 +49,10 @@ public class OptimisticUnchokeHandler implements Runnable {
         String s="";
         for(int i=1; i<peerList.size()+1; i++) {
             ps.peerLogger.log(Level.INFO, "Connecting to the server " + peerList.get(i + 1000 + "").peerAddress);
-            TimeUnit.SECONDS.sleep(5);
             ps.peerLogger.log(Level.INFO, "Connection established with " + peerList.get(i + 1000 + "").peerAddress);
-            TimeUnit.SECONDS.sleep(5);
             ps.peerLogger.log(Level.INFO, "Searching for the data");
-            TimeUnit.SECONDS.sleep(5);
+
+
             if (peerList.get(i + 1000 + "").containsFile == 1) {
                 ps.peerLogger.log(Level.INFO, "Copying the data from " + peerList.get(i + 1000 + "").peerAddress);
                 s = peerList.get(i + 1000 + "").peerAddress;
@@ -62,9 +61,13 @@ public class OptimisticUnchokeHandler implements Runnable {
             } else {
                 ps.peerLogger.log(Level.INFO, "Didn't Find data in server " + peerList.get(i + 1000 + "").peerAddress);
             }
+            ps.peerLogger.log(Level.INFO,"Connection Closed");
+            ps.peerLogger.log(Level.INFO,"");
+            TimeUnit.SECONDS.sleep(4);
         }
         if(temp==0){
             ps.peerLogger.log(Level.INFO,"Data Copied Successfully from "+s);
+            System.out.println("Data Copied Successfully from");
         }
         ps.peerLogger.log(Level.INFO,"Connection Closed");
 
