@@ -51,8 +51,6 @@ public class OptimisticUnchokeHandler implements Runnable {
             ps.peerLogger.log(Level.INFO, "Connecting to the server " + peerList.get(i + 1000 + "").peerAddress);
             ps.peerLogger.log(Level.INFO, "Connection established with " + peerList.get(i + 1000 + "").peerAddress);
             ps.peerLogger.log(Level.INFO, "Searching for the data");
-
-
             if (peerList.get(i + 1000 + "").containsFile == 1) {
                 ps.peerLogger.log(Level.INFO, "Copying the data from " + peerList.get(i + 1000 + "").peerAddress);
                 s = peerList.get(i + 1000 + "").peerAddress;
